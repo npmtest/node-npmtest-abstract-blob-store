@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-abstract-blob-store",     "homepage": "https://github.com/npmtest/node-npmtest-abstract-blob-store",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-abstract-blob-store.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [abstract-blob-store (v3.2.0)](https://github.com/maxogden/abstract-blob-store)  [![npm package](https://img.shields.io/npm/v/npmtest-abstract-blob-store.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-abstract-blob-store) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-abstract-blob-store.svg)](https://travis-ci.org/npmtest/node-npmtest-abstract-blob-store)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-abstract-blob-store",
+    "keywords": [
+        "coverage",
+        "test",
+        "abstract-blob-store"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_abstract_blob_store.js",
+    "name": "npmtest-abstract-blob-store",
+    "nameAlias": "npmtest_abstract_blob_store",
+    "nameOriginal": "npmtest-abstract-blob-store",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-abstract-blob-store.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
